@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Flats</h1>
+<div class="btn btn-success"><%= link_to 'New Flat', new_flat_path %></div>
+<div class="container">
+
+    <div class="row gap-3 mt-3">
+
+      <% @flats.each do |flat| %>
+        <div class="card" style="width: 18rem;">
+          <img src="https://source.unsplash.com/random/240x300/?home" alt="">
+          <div class="card-body">
+            <h5 class="card-title"><%= flat.name %></h5>
+            <h6 class="card-text"><%= flat.address %></h6>
+            <p class="card-text"><%= flat.description %></p>
+            <p class="card-text"><%= flat.number_of_guests %></p>
+            <%= link_to 'More Info', flat %>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">$ <%= flat.price_per_night %></td></small>
+          </div>
+        </div>
+        <br>
+      <% end %>
+
+    </div>
+  <br>
+
+
+</div>
